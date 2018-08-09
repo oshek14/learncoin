@@ -35,7 +35,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xbe357d9a90be357d9a90ffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264fffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264f");
+uint256 hashGenesisBlock("0xbe357d9a90ffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264f");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Learncoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
