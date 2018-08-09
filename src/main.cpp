@@ -1630,7 +1630,7 @@ bool CBlock::ConnectBlock(CValidationState &state, CBlockIndex* pindex, CCoinsVi
     // Special case for the genesis block, skipping connection of its transactions
     // (its coinbase is unspendable)
     if (GetHash() == hashGenesisBlock) {
-        vibe357d9a90ffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264few.SetBestBlock(pindex);
+        view.SetBestBlock(pindex);
         pindexGenesisBlock = pindex;
         return true;
     }
@@ -2180,7 +2180,7 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
     CBlockIndex* pindexPrev = NULL;
     int nHeight = 0;
     if (hash != hashGenesisBlock) {
-        mabe357d9a90ffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264fp<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(hashPrevBlock);
+        map<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(hashPrevBlock);
         if (mi == mapBlockIndex.end())
             return state.DoS(10, error("AcceptBlock() : prev block not found"));
         pindexPrev = (*mi).second;
