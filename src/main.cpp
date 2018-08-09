@@ -35,7 +35,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xbe357d9a90ffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264f");
+uint256 hashGenesisBlock("0x");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Learncoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2746,7 +2746,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xc3;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0xbe357d9a90ffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264f");
+        hashGenesisBlock = uint256("0x");
     }
 
     //
@@ -2793,7 +2793,7 @@ bool InitBlockIndex() {
         block.nVersion = 1;
         block.nTime    =1533713618;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 758345;
+        block.nNonce   = 0;
 
         if (fTestNet)
         {
@@ -2806,9 +2806,9 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xb6106070a11ca02260befcc8ebf0b305a7ed8551b21c20b585a55b1967c23c69"));
+        assert(block.hashMerkleRoot == uint256("0x"));
 
-if (true && block.GetHash() != hashGenesisBlock)
+        if (true && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
