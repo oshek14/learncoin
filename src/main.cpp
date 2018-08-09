@@ -35,7 +35,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x");
+uint256 hashGenesisBlock("0xbe357d9a90be357d9a90ffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264fffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264f");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Learncoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1630,7 +1630,7 @@ bool CBlock::ConnectBlock(CValidationState &state, CBlockIndex* pindex, CCoinsVi
     // Special case for the genesis block, skipping connection of its transactions
     // (its coinbase is unspendable)
     if (GetHash() == hashGenesisBlock) {
-        view.SetBestBlock(pindex);
+        vibe357d9a90ffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264few.SetBestBlock(pindex);
         pindexGenesisBlock = pindex;
         return true;
     }
@@ -2180,7 +2180,7 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
     CBlockIndex* pindexPrev = NULL;
     int nHeight = 0;
     if (hash != hashGenesisBlock) {
-        map<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(hashPrevBlock);
+        mabe357d9a90ffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264fp<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(hashPrevBlock);
         if (mi == mapBlockIndex.end())
             return state.DoS(10, error("AcceptBlock() : prev block not found"));
         pindexPrev = (*mi).second;
@@ -2746,7 +2746,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xc3;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0x");
+        hashGenesisBlock = uint256("0xbe357d9a90ffffc2a9e207931d6b9e5dad079263fe8e56e91db2e14659fd264f");
     }
 
     //
@@ -2793,7 +2793,7 @@ bool InitBlockIndex() {
         block.nVersion = 1;
         block.nTime    =1533713618;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 0;
+        block.nNonce   = 758345;
 
         if (fTestNet)
         {
