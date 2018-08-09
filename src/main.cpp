@@ -1095,7 +1095,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 10 * 30 * 100; // Learncoin: 5 minutes
+static const int64 nTargetTimespan = 10 * 30; // Learncoin: 5 minutes
 static const int64 nTargetSpacing = 1 * 20; // Learncoin: 30 seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
